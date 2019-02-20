@@ -38,18 +38,6 @@ public class Response<T> extends BaseResult {
         super.setSuccess(false);
     }
 
-    public Response(String errorCode, String errorMessage, Boolean isRetry) {
-        this.errorCode = errorCode;
-        this.errorMessage = errorMessage;
-        this.isRetry = isRetry;
-        super.setSuccess(false);
-    }
-
-    /**
-     * 请求是否需要重试
-     */
-    private Boolean isRetry = Boolean.FALSE;
-
     public T getResult() {
         return result;
     }
@@ -72,14 +60,6 @@ public class Response<T> extends BaseResult {
 
     public void setErrorMessage(String errorMessage) {
         this.errorMessage = errorMessage;
-    }
-
-    public Boolean getIsRetry() {
-        return isRetry;
-    }
-
-    public void setIsRetry(Boolean isRetry) {
-        this.isRetry = isRetry;
     }
 
 }
