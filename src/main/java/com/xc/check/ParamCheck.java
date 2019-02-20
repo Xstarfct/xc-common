@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.apache.commons.collections.CollectionUtils;
 
-import com.xc.domain.ErrorCodeEnum;
+import com.xc.enums.ErrorCodeEnum;
 import com.xc.exception.ErrorCodeException;
 
 /**

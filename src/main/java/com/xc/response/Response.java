@@ -1,5 +1,7 @@
 package com.xc.response;
 
+import com.xc.domain.Page;
+
 /**
  * 返回结果
  *
@@ -14,22 +16,29 @@ public class Response<T> extends BaseResult {
      * 返回值
      */
     private T                 result;
-
     /**
      * 错误码
      */
     private String            errorCode;
-
     /**
      * 错误信息
      */
     private String            errorMessage;
+    /**
+     * 如果是有分页的返回结果，就需要设置
+     */
+    private Page              page;
 
     public Response() {
     }
 
     public Response(T result) {
         this.result = result;
+    }
+
+    public Response(T result, Page page) {
+        this.result = result;
+        this.page = page;
     }
 
     public Response(String errorCode, String errorMessage) {
@@ -62,4 +71,11 @@ public class Response<T> extends BaseResult {
         this.errorMessage = errorMessage;
     }
 
+    public Page getPage() {
+        return page;
+    }
+
+    public void setPage(Page page) {
+        this.page = page;
+    }
 }

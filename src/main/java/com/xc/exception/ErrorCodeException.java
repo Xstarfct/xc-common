@@ -1,6 +1,6 @@
 package com.xc.exception;
 
-import com.xc.domain.ErrorCodeEnum;
+import com.xc.enums.ErrorCodeEnum;
 
 /**
  * 自定义异常

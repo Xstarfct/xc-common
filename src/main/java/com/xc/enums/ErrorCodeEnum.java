@@ -1,4 +1,4 @@
-package com.xc.domain;
+package com.xc.enums;
 
 /**
  * 错误码枚举类型

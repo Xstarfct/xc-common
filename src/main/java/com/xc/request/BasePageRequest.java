@@ -1,10 +1,12 @@
 package com.xc.request;
 
 /**
+ * 分页请求基类
+ *
  * @author xstarfct
  * @version 2019-02-18 15:07
  */
-public class PageRequest extends BaseRequest {
+public abstract class BasePageRequest extends BaseRequest {
 
     private static final long serialVersionUID = -609264446094177360L;
     /**
