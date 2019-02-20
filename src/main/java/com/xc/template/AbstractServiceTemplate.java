@@ -75,9 +75,12 @@ public abstract class AbstractServiceTemplate<T> {
         if (params == null) {
             return sb.toString();
         }
-        for (Object param : params) {
-            sb.append(JSON.toJSONString(param));
-            sb.append(",");
+        int length = params.length;
+        for (int i = 0; i < length; i++) {
+            sb.append(JSON.toJSONString(params[i]));
+            if (i < length - 1) {
+                sb.append(",");
+            }
         }
         return sb.toString();
     }

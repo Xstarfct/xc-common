@@ -6,7 +6,7 @@ package com.xc.enums;
  * @author star
  * @date 2019-02-20 14:48
  */
-public enum InvokerEnum {
+public enum AppNameEnum {
     /**
      *
      */

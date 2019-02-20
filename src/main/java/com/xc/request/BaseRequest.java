@@ -1,7 +1,7 @@
 package com.xc.request;
 
 import com.xc.domain.BaseDO;
-import com.xc.enums.InvokerEnum;
+import com.xc.enums.AppNameEnum;
 
 /**
  * 请求基类
@@ -16,6 +16,5 @@ public abstract class BaseRequest extends BaseDO {
      * 
      * @return
      */
-    public abstract InvokerEnum getInvokeAppName();
-
+    public abstract AppNameEnum getInvokeAppName();
 }

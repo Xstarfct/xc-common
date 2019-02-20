@@ -1,10 +1,13 @@
 package com.xc;
 
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
+import com.alibaba.fastjson.JSON;
 import com.xc.check.ParamCheck;
 import com.xc.domain.Page;
-import com.xc.enums.InvokerEnum;
+import com.xc.enums.AppNameEnum;
 import com.xc.exception.ErrorCodeException;
 import com.xc.request.BaseRequest;
 import com.xc.response.Response;
@@ -16,12 +19,14 @@ import com.xc.template.AbstractServiceTemplate;
  */
 public class TestResponse {
 
+    private Logger logger = LoggerFactory.getLogger("TEST");
+
     @Test
     public void test() {
         ItemQueryRequest request = new ItemQueryRequest();
         request.setName("test");
 
-        new AbstractServiceTemplate<String>() {
+        Response<String> response = new AbstractServiceTemplate<String>() {
             @Override
             public void checkParam() throws ErrorCodeException {
                 ParamCheck.nullCheck(request);
@@ -30,6 +35,7 @@ public class TestResponse {
             @Override
             public Response<String> bizExecute() throws Exception {
                 return new Response<>("Test", new Page(1, 10, 100));
+//                return new Response<>("Test");
             }
 
             @Override
@@ -37,7 +43,7 @@ public class TestResponse {
                 return "TEST";
             }
         }.execute(request);
-
+        logger.info("response = {}", JSON.toJSONString(response));
 
     }
 
@@ -57,7 +63,7 @@ class ItemQueryRequest extends BaseRequest {
     }
 
     @Override
-    public InvokerEnum getInvokeAppName() {
-        return InvokerEnum.ITEM;
+    public AppNameEnum getInvokeAppName() {
+        return AppNameEnum.ITEM;
     }
 }
