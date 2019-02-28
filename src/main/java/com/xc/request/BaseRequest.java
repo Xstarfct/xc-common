@@ -1,6 +1,7 @@
 package com.xc.request;
 
 import com.xc.domain.BaseDO;
+import com.xc.domain.Page;
 import com.xc.enums.AppNameEnum;
 
 /**
@@ -17,4 +18,14 @@ public abstract class BaseRequest extends BaseDO {
      * @return
      */
     public abstract AppNameEnum getInvokeAppName();
+
+    private Page page;
+
+    public Page getPage() {
+        return page;
+    }
+
+    public void setPage(Page page) {
+        this.page = page;
+    }
 }
